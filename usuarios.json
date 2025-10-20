@@ -1,0 +1,48 @@
+[
+    {
+        "nome": "pedrogay",
+        "idade": 19,
+        "email": "kzz@",
+        "senha": "$2b$12$l/8IjsauZKJNigKvvEXYWOllHtvc14D6mWJp7XcKhmhq6k42xqX0K",
+        "acessos": [
+            "2025-10-19T13:00:23.964824"
+        ],
+        "tempo_total_minutos": 0
+    },
+    {
+        "tipo": "aluno",
+        "nome": "kaue",
+        "ra": "R857488",
+        "idade": 19,
+        "email": "kaue@gmail.com",
+        "senha": "$2b$12$GfNk3RUlAkRtgMBywo7TR.w75j1KEDx1ByGCGnwKuuy0BF7deasde",
+        "acessos": [
+            "2025-10-19T13:37:50.547219"
+        ],
+        "tempo_total_minutos": 0
+    },
+    {
+        "tipo": "aluno",
+        "nome": "kaue",
+        "ra": "R1234",
+        "idade": 19,
+        "email": "kzuza@",
+        "senha": "$2b$12$GSlgxHt7C9wjLpTw6MDWGOK.gmQKug/Z9u4zg91ocCl3k7grYMdLa",
+        "acessos": [
+            "2025-10-19T13:41:58.040667"
+        ],
+        "tempo_total_minutos": 0
+    },
+    {
+        "tipo": "professor",
+        "nome": "Lula",
+        "idade": 66,
+        "email": "Lula@",
+        "disciplina": "roubando",
+        "senha": "$2b$12$H6jUVqIkuxYfIjF.BF1Jeu/XeQCa5BXKEJSE8zoWbNnLaWPgyvVCC",
+        "acessos": [
+            "2025-10-19T14:01:57.267468"
+        ],
+        "tempo_total_minutos": 0
+    }
+]
