@@ -26,25 +26,40 @@ def validar_senha(senha):
         return False
     return True
 
-# ---------------- CADASTRO GERAL ----------------
+def pedir_senha_segura():
+    while True:
+        senha = input("Digite uma senha forte: ")
+        if validar_senha(senha):
+            return senha
+        print("❌ Senha fraca. Regras:\n"
+              "- Mínimo 8 caracteres\n"
+              "- Uma letra maiúscula\n"
+              "- Uma letra minúscula\n"
+              "- Um número\n"
+              "- Um símbolo (!@#$%)\n")
+
 def menu_cadastro():
-    print("\n==============================")
-    print("   SISTEMA DE CADASTRO UNIP")
-    print("==============================")
-    print("1. Cadastrar Aluno")
-    print("2. Cadastrar Professor")
-    print("==============================")
+    while True:
+        print("\n==============================")
+        print("   SISTEMA DE CADASTRO UNIP")
+        print("==============================")
+        print("1. Cadastrar Aluno")
+        print("2. Cadastrar Professor")
+        print("3. Voltar ao menu principal")
+        print("==============================")
 
-    tipo = input("Escolha o tipo de cadastro (1 ou 2): ").strip()
+        tipo = input("Escolha o tipo de cadastro (1, 2 ou 3): ").strip()
 
-    if tipo == "1":
-        cadastrar_aluno()
-    elif tipo == "2":
-        cadastrar_professor()
-    else:
-        print("❌ Opção inválida. Retornando ao menu principal.")
+        if tipo == "1":
+            cadastrar_aluno()
+        elif tipo == "2":
+            cadastrar_professor()
+        elif tipo == "3":
+            print("🔙 Voltando ao menu principal...")
+            break
+        else:
+            print("❌ Opção inválida. Escolha uma das opções corretas.")
 
-# ---------------- CADASTRO ALUNO ----------------
 def cadastrar_aluno():
     print("\n=== Cadastro de Aluno ===")
     nome = input("Nome do aluno: ")
@@ -53,10 +68,9 @@ def cadastrar_aluno():
     idade = int(input("Idade: "))
 
     senha = pedir_senha_segura()
-
     senha_hash = bcrypt.hashpw(senha.encode('utf-8'), bcrypt.gensalt())
-    agora = datetime.now().isoformat()
 
+    agora = datetime.now().isoformat()
     aluno = {
         "tipo": "aluno",
         "nome": nome,
@@ -73,7 +87,6 @@ def cadastrar_aluno():
     salvar_dados(dados)
     print("✅ Aluno cadastrado com sucesso!\n")
 
-# ---------------- CADASTRO PROFESSOR ----------------
 def cadastrar_professor():
     print("\n=== Cadastro de Professor ===")
     nome = input("Nome do professor: ")
@@ -82,10 +95,9 @@ def cadastrar_professor():
     idade = int(input("Idade: "))
 
     senha = pedir_senha_segura()
-
     senha_hash = bcrypt.hashpw(senha.encode('utf-8'), bcrypt.gensalt())
-    agora = datetime.now().isoformat()
 
+    agora = datetime.now().isoformat()
     professor = {
         "tipo": "professor",
         "nome": nome,
@@ -101,16 +113,3 @@ def cadastrar_professor():
     dados.append(professor)
     salvar_dados(dados)
     print("✅ Professor cadastrado com sucesso!\n")
-
-# ---------------- SENHA SEGURA ----------------
-def pedir_senha_segura():
-    while True:
-        senha = input("Digite uma senha forte: ")
-        if validar_senha(senha):
-            return senha
-        print("❌ Senha fraca. Regras:\n"
-              "- Mínimo 8 caracteres\n"
-              "- Uma letra maiúscula\n"
-              "- Uma letra minúscula\n"
-              "- Um número\n"
-              "- Um símbolo (!@#$%)\n")

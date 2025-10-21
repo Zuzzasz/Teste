@@ -44,5 +44,41 @@
             "2025-10-19T14:01:57.267468"
         ],
         "tempo_total_minutos": 0
+    },
+    {
+        "tipo": "aluno",
+        "nome": "kaue",
+        "ra": "1234",
+        "idade": 19,
+        "email": "Kzuza@",
+        "senha": "$2b$12$GXeRRfkHNfKEijQBn7WqP.NxMwZowDOxmDTWOiOndQ767YH7kHzhe",
+        "acessos": [
+            "2025-10-20T20:22:42.583607"
+        ],
+        "tempo_total_minutos": 0
+    },
+    {
+        "tipo": "aluno",
+        "nome": "3",
+        "ra": "2332",
+        "idade": 23,
+        "email": "23323",
+        "senha": "$2b$12$/HfAuy8lMutD9tk0iur96u8B6iHv2sN7.JhAGbiAKhXs2qc/Xd7uK",
+        "acessos": [
+            "2025-10-20T21:12:14.772150"
+        ],
+        "tempo_total_minutos": 0
+    },
+    {
+        "tipo": "aluno",
+        "nome": "Kaue zuza ",
+        "ra": "!31231242",
+        "idade": 19,
+        "email": "kzuza@",
+        "senha": "$2b$12$ohZ01Asgfu0GF3i5vCOa/e5If/zD//RxsEP5URVgaMtBhZGx0jtBO",
+        "acessos": [
+            "2025-10-20T21:22:49.785704"
+        ],
+        "tempo_total_minutos": 0
     }
 ]
