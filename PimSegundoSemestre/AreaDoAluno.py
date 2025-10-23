@@ -1,11 +1,11 @@
 # AreaDoAluno.py
 import Cadastro
-from getpass import getpass
 import bcrypt
+from MenuDoAluno import menu_aluno
 
 def login_aluno():
     ra = input('Digite seu RA: ').strip().upper()
-    senha = getpass('Digite sua senha: ')
+    senha = input('Digite sua senha: ')
 
     # Carrega todos os usuários
     usuarios = Cadastro.carregar_dados()
@@ -29,3 +29,6 @@ def login_aluno():
     # Login bem-sucedido
     print('\n✅ Login de aluno bem-sucedido!')
     print('Bem-vindo(a) ao portal do aluno.\n')
+
+    # 👇 Chama o menu do aluno logado
+    menu_aluno(aluno)

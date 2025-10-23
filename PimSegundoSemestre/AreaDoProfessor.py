@@ -1,11 +1,10 @@
-# AreaDoProfessor.py
+from MenuDoProfessor import menu_professor
 import Cadastro
-from getpass import getpass
 import bcrypt
 
 def login_professor():
     email = input('Digite seu e-mail institucional: ').strip().lower()
-    senha = getpass('Digite sua senha: ')
+    senha = input('Digite sua senha: ')
 
     # Carrega todos os usuários
     usuarios = Cadastro.carregar_dados()
@@ -13,7 +12,7 @@ def login_professor():
     # Filtra apenas professores
     professores = [u for u in usuarios if u.get("tipo") == "professor"]
 
-    # Procura o professor pelo email
+    # Procura o professor pelo e-mail
     professor = next((u for u in professores if u.get("email").lower() == email), None)
 
     if not professor:
@@ -26,6 +25,7 @@ def login_professor():
         print("Senha inválida! Acesso encerrado.")
         return
 
-    # Login bem-sucedido
-    print('\n✅ Login de professor bem-sucedido!')
-    print('Bem-vindo(a) ao painel do professor.\n')
+    print(f"\n✅ Login de professor bem-sucedido! Bem-vindo(a), {professor.get('nome')}\n")
+
+    # 👇 Chama o menu do professor logado
+    menu_professor(professor)

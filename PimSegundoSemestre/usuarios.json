@@ -1,0 +1,14 @@
+[
+    {
+        "tipo": "professor",
+        "nome": "Kaue",
+        "idade": 19,
+        "email": "Kauezuza@",
+        "disciplina": "mat",
+        "senha": "$2b$12$2pAGivUchmGGwrsJ1.770eCTKVUtovOuvf1KDXeLNrXP2KKJUkEWi",
+        "acessos": [
+            "2025-10-22T19:06:12.697539"
+        ],
+        "tempo_total_minutos": 0
+    }
+]

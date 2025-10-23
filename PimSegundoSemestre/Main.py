@@ -1,8 +1,10 @@
 # main.py
-import AreaDoProfessor
 import AreaDoAluno
-import Chatbot
 import Cadastro
+import gerar_boletim
+import Chatbot 
+import AreaDoProfessor
+
 
 def menu_principal():
     while True:
@@ -16,7 +18,7 @@ def menu_principal():
         print('5. Sair')
         print('==============================')
 
-        opcao = input('Escolha qual área deseja acessar (1, 2, 3, 4 ou 5): ').strip()
+        opcao = input('\nEscolha qual área deseja acessar (1, 2, 3, 4 ou 5): ').strip()
 
         if opcao == "1":
             AreaDoProfessor.login_professor()
