@@ -1,10 +1,10 @@
 # main.py
 import AreaDoAluno
+import AreaDoProfessor
 import Cadastro
 import gerar_boletim
 import Chatbot 
-import AreaDoProfessor
-
+import Turmas
 
 def menu_principal():
     while True:
@@ -15,24 +15,27 @@ def menu_principal():
         print('2. Área do(a) Aluno(a)')
         print('3. Chatbot de Dúvidas')
         print('4. Cadastro de Novo Usuário')
-        print('5. Sair')
+        print("5. Acessar turmas ")
+        print('6. Sair')
         print('==============================')
 
-        opcao = input('\nEscolha qual área deseja acessar (1, 2, 3, 4 ou 5): ').strip()
+        opcao = input('\nEscolha qual área deseja acessar (1 a 6): ').strip()
 
         if opcao == "1":
             AreaDoProfessor.login_professor()
         elif opcao == "2":
             AreaDoAluno.login_aluno()
         elif opcao == "3":
-            Chatbot.iniciar_chatbot()
+            Chatbot.chatbot()
         elif opcao == "4":
-            Cadastro.menu_cadastro()  # chama menu de cadastro
+            Cadastro.menu_cadastro()  
         elif opcao == "5":
+            Turmas.menu_turmas()
+        elif opcao == "6":
             print("Saindo do sistema...")
             break
         else:
-            print("❌ ERRO! Escolha uma das opções válidas (1 a 5).")
+            print("❌ ERRO! Escolha uma das opções válidas (1 a 6).")
 
 if __name__ == "__main__":
     menu_principal()

@@ -1,5 +1,5 @@
 from MenuDoProfessor import menu_professor
-import Cadastro
+import Cadastro 
 import bcrypt
 
 def login_professor():
