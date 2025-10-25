@@ -113,3 +113,11 @@ def cadastrar_professor():
     dados.append(professor)
     salvar_dados(dados)
     print("✅ Professor cadastrado com sucesso!\n")
+
+def cadastrar_usuario(tipo):
+    if tipo == "aluno":
+        cadastrar_aluno()
+    elif tipo == "professor":
+        cadastrar_professor()
+    #elif tipo == "admin":
+        #cadastrar_admin()

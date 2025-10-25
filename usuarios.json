@@ -89,5 +89,29 @@
             "2025-10-22T20:15:56.053022"
         ],
         "tempo_total_minutos": 0
+    },
+    {
+        "tipo": "professor",
+        "nome": "Kaue",
+        "idade": 19,
+        "email": "Kazu255.@",
+        "disciplina": "mat",
+        "senha": "$2b$12$HpytMqmzA4Ebl7lnyp2xVO6r3XTc3oyOekDh7V7FW8uVZGKYehAsK",
+        "acessos": [
+            "2025-10-24T22:02:20.810790"
+        ],
+        "tempo_total_minutos": 0
+    },
+    {
+        "tipo": "aluno",
+        "nome": "Kaue",
+        "ra": "K123",
+        "idade": 19,
+        "email": "Kazu25.@",
+        "senha": "$2b$12$GKaf.7hz627YToj9MVzQXuQrsDiT5Hf09MyOy.kBGxZvSRKbjqurG",
+        "acessos": [
+            "2025-10-24T22:04:10.739651"
+        ],
+        "tempo_total_minutos": 0
     }
 ]
