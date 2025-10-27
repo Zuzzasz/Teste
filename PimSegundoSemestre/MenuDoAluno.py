@@ -20,7 +20,7 @@ def menu_aluno(aluno):
         print("5. Voltar ao menu principal")
         print("==============================")
 
-        opcao = input("Escolha qual área deseja acessar (1 a 4): ").strip()
+        opcao = input("Escolha qual área deseja acessar (1 a 5): ").strip()
 
         if opcao == "1":
             ver_boletim(aluno)

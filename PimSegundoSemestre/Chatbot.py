@@ -2,6 +2,7 @@
 import AreaDoAluno
 import AreaDoProfessor
 import Cadastro
+from Relatorios import relatorio_aluno, relatorio_professor
 
 def chatbot():
     print("\n Olá! Eu sou o Chatbot da Faculdade.")
@@ -11,12 +12,10 @@ def chatbot():
     while True:
         pergunta = input("Você: ").strip().lower()
 
-        # ======= SAIR =======
         if pergunta in ["sair", "tchau", "adeus"]:
             print("Chatbot: Até logo! Bons estudos! 👋")
             break
 
-        # ======= LOGIN =======
         elif "login" in pergunta:
             if "professor" in pergunta:
                 print("Chatbot: Ok! Vamos fazer o login como professor 👨‍🏫")
@@ -27,7 +26,6 @@ def chatbot():
             else:
                 print("Chatbot: Você quer fazer login como professor ou aluno?")
 
-        # ======= CADASTRO =======
         elif "cadastro" in pergunta or "cadastrar" in pergunta:
             print("Chatbot: Posso ajudar com o cadastro. 👨‍💻")
             print("Quem você deseja cadastrar? (professor / aluno / admin)")
@@ -46,8 +44,6 @@ def chatbot():
             print("Chatbot: Se esqueceu sua senha, peça ajuda ao administrador para redefinir.")
         elif "horário" in pergunta or "aula" in pergunta:
             print("Chatbot: Os horários das aulas estão disponíveis no portal da turma.")
-        elif "professor" in pergunta:
-            print("Chatbot: Os professores podem lançar notas e consultar alunos pelo sistema.")
         elif "ajuda" in pergunta or "duvida" in pergunta:
             print("Chatbot: Posso ajudar com login, cadastro, notas e acesso ao sistema. O que deseja?")
         elif "sistema" in pergunta:
@@ -56,5 +52,12 @@ def chatbot():
             print("Chatbot: O administrador tem acesso total ao sistema, podendo cadastrar novos usuários.")
         elif "faculdade" in pergunta:
             print("Chatbot: A Faculdade é comprometida com a excelência acadêmica e inovação tecnológica! 🎓")
+
+        elif "relatorio aluno" in pergunta or "informacoes aluno" in pergunta:
+            relatorio_aluno()
+
+        elif "relatorio professor" in pergunta or "informacoes professor" in pergunta:
+            relatorio_professor()
+
         else:
             print("Chatbot: Desculpe, não entendi. Pode reformular a pergunta? 🤔")

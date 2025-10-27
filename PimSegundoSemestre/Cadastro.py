@@ -61,10 +61,18 @@ def menu_cadastro():
             print("❌ Opção inválida. Escolha uma das opções corretas.")
 
 def cadastrar_aluno():
+    dados = carregar_dados()
+    if any(u for u in dados if u.get("ra") == ra):
+        print("❌ RA já cadastrado!")
+        return
+    if any(u for u in dados if u.get("email","").lower() == email.lower()):
+        print("❌ E-mail já cadastrado!")
+        return
+    
     print("\n=== Cadastro de Aluno ===")
     nome = input("Nome do aluno: ")
     ra = input("RA do aluno: ").strip().upper()
-    email = input("E-mail do aluno: ")
+    email = input("E-mail do aluno: ").strip().lower()
     idade = int(input("Idade: "))
 
     senha = pedir_senha_segura()
@@ -88,9 +96,13 @@ def cadastrar_aluno():
     print("✅ Aluno cadastrado com sucesso!\n")
 
 def cadastrar_professor():
+    if any(u for u in dados if u.get("email","").lower() == email.lower()):
+        print("❌ E-mail já cadastrado!")
+        return
+    
     print("\n=== Cadastro de Professor ===")
     nome = input("Nome do professor: ")
-    email = input("E-mail institucional: ")
+    email = input("E-mail institucional: ").strip().lower()
     disciplina = input("Disciplina que leciona: ")
     idade = int(input("Idade: "))
 
@@ -119,5 +131,15 @@ def cadastrar_usuario(tipo):
         cadastrar_aluno()
     elif tipo == "professor":
         cadastrar_professor()
-    #elif tipo == "admin":
-        #cadastrar_admin()
+
+def carregar_dados_alunos():
+    if not os.path.exists("alunos.json"):
+        return []
+    with open("alunos.json", "r", encoding="utf-8") as f:
+        return json.load(f)
+
+def carregar_dados_professores():
+    if not os.path.exists("professores.json"):
+        return []
+    with open("professores.json", "r", encoding="utf-8") as f:
+        return json.load(f)

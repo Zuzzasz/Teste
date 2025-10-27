@@ -1,92 +1,13 @@
 [
     {
         "tipo": "aluno",
-        "nome": "kaue",
-        "ra": "R857488",
-        "idade": 19,
-        "email": "kaue@gmail.com",
-        "senha": "$2b$12$GfNk3RUlAkRtgMBywo7TR.w75j1KEDx1ByGCGnwKuuy0BF7deasde",
-        "acessos": [
-            "2025-10-19T13:37:50.547219"
-        ],
-        "tempo_total_minutos": 0,
-        "frequencia": 1
-    },
-    {
-        "tipo": "aluno",
-        "nome": "kaue",
-        "ra": "R1234",
-        "idade": 19,
-        "email": "kzuza@",
-        "senha": "$2b$12$GSlgxHt7C9wjLpTw6MDWGOK.gmQKug/Z9u4zg91ocCl3k7grYMdLa",
-        "acessos": [
-            "2025-10-19T13:41:58.040667"
-        ],
-        "tempo_total_minutos": 0,
-        "frequencia": 1
-    },
-    {
-        "tipo": "aluno",
-        "nome": "kaue",
-        "ra": "1234",
-        "idade": 19,
-        "email": "Kzuza@",
-        "senha": "$2b$12$GXeRRfkHNfKEijQBn7WqP.NxMwZowDOxmDTWOiOndQ767YH7kHzhe",
-        "acessos": [
-            "2025-10-20T20:22:42.583607"
-        ],
-        "tempo_total_minutos": 0,
-        "frequencia": 0
-    },
-    {
-        "tipo": "aluno",
-        "nome": "3",
-        "ra": "2332",
-        "idade": 23,
-        "email": "23323",
-        "senha": "$2b$12$/HfAuy8lMutD9tk0iur96u8B6iHv2sN7.JhAGbiAKhXs2qc/Xd7uK",
-        "acessos": [
-            "2025-10-20T21:12:14.772150"
-        ],
-        "tempo_total_minutos": 0
-    },
-    {
-        "tipo": "aluno",
-        "nome": "Kaue zuza ",
-        "ra": "!31231242",
-        "idade": 19,
-        "email": "kzuza@",
-        "senha": "$2b$12$ohZ01Asgfu0GF3i5vCOa/e5If/zD//RxsEP5URVgaMtBhZGx0jtBO",
-        "acessos": [
-            "2025-10-20T21:22:49.785704"
-        ],
-        "tempo_total_minutos": 0,
-        "notas": {
-            "Matemática": 2.0,
-            "Português": 7.0
-        }
-    },
-    {
-        "tipo": "professor",
-        "nome": "kaue",
-        "idade": 19,
-        "email": "Kazu@",
-        "disciplina": "mat",
-        "senha": "$2b$12$JrPCLBJ7yD9GQ/Dw7x7t3OqOZJvMQsUe8wLFCPC8JsqYc695tH1Ri",
-        "acessos": [
-            "2025-10-22T19:50:26.004485"
-        ],
-        "tempo_total_minutos": 0
-    },
-    {
-        "tipo": "aluno",
         "nome": "Kaue",
         "ra": "K123",
         "idade": 19,
         "email": "Kazu@",
-        "senha": "$2b$12$axMdtL6adZrVpEmf/7LBbePPAKzyuuje7NSD6G3dQVAM4CsGcLfqS",
+        "senha": "$2b$12$Edc9oOwUAc/svn6IXdpWtuH82Cze7V5xlltTuWaj9Vw3EZ9gQY5Cq",
         "acessos": [
-            "2025-10-22T20:15:56.053022"
+            "2025-10-27T17:10:05.681155"
         ],
         "tempo_total_minutos": 0
     },
@@ -94,23 +15,11 @@
         "tipo": "professor",
         "nome": "Kaue",
         "idade": 19,
-        "email": "Kazu255.@",
-        "disciplina": "mat",
-        "senha": "$2b$12$HpytMqmzA4Ebl7lnyp2xVO6r3XTc3oyOekDh7V7FW8uVZGKYehAsK",
+        "email": "Kazu@",
+        "disciplina": "matematica",
+        "senha": "$2b$12$7sTmLBtFERfchiM3zGPsQuYJmUh/mCJPtCEXNCgDeJWqdssUK9koa",
         "acessos": [
-            "2025-10-24T22:02:20.810790"
-        ],
-        "tempo_total_minutos": 0
-    },
-    {
-        "tipo": "aluno",
-        "nome": "Kaue",
-        "ra": "K123",
-        "idade": 19,
-        "email": "Kazu25.@",
-        "senha": "$2b$12$GKaf.7hz627YToj9MVzQXuQrsDiT5Hf09MyOy.kBGxZvSRKbjqurG",
-        "acessos": [
-            "2025-10-24T22:04:10.739651"
+            "2025-10-27T17:10:31.198419"
         ],
         "tempo_total_minutos": 0
     }
