@@ -9,7 +9,13 @@
         "acessos": [
             "2025-10-27T17:10:05.681155"
         ],
-        "tempo_total_minutos": 0
+        "tempo_total_minutos": 0,
+        "notas": {
+            "matematica": 9.0,
+            "portugues": 7.0,
+            "Ciências": 5.0
+        },
+        "faltas": 1
     },
     {
         "tipo": "professor",

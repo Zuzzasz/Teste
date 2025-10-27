@@ -59,19 +59,49 @@ def lancar_notas():
     salvar_dados(dados)
 
 
+import Cadastro
+from gerar_boletim import gerar_boletim_salvar
+
 def realizar_chamada():
-    print("\n=== Realizar Chamada ===")
-    ra = input("Digite o RA do aluno: ").strip()
-    
-    alunos = [u for u in carregar_dados() if u.get("tipo") == "aluno"]
-    aluno = next((a for a in alunos if a.get("ra") == ra), None)
-    
-    if not aluno:
-        print("❌ Aluno não encontrado!")
+    """
+    Busca alunos cadastrados no sistema e registra presença/falta.
+    Gera boletim atualizado para cada aluno.
+    """
+    # Carrega todos os usuários
+    usuarios = Cadastro.carregar_dados()
+
+    # Filtra apenas alunos
+    alunos = [u for u in usuarios if u.get('tipo') == 'aluno']
+
+    if not alunos:
+        print("⚠️ Nenhum aluno cadastrado no sistema.")
         return
-    
-    aluno["frequencia"] = aluno.get("frequencia", 0) + 1
-    print(f"✅ Chamada registrada para {aluno['nome']} ({aluno['frequencia']} dias)")
+
+    print("\n=== REGISTRO DE PRESENÇA (ALUNOS CADASTRADOS) ===\n")
+
+    for aluno in alunos:
+        while True:
+            resposta = input(f"O aluno {aluno['nome']} (RA: {aluno['ra']}) esteve presente? (s/n): ").strip().lower()
+            if resposta in ['s', 'sim']:
+                aluno['faltas'] = aluno.get('faltas', 0)  # garante que a chave exista
+                print(f"✅ Presença registrada para {aluno['nome']}")
+                break
+            elif resposta in ['n', 'não', 'nao']:
+                aluno['faltas'] = aluno.get('faltas', 0) + 1
+                print(f"❌ Falta registrada para {aluno['nome']}")
+                break
+            else:
+                print("Resposta inválida! Digite 's' para presente ou 'n' para falta.")
+
+    print("\n✅ Chamada finalizada para todos os alunos.\n")
+
+    # Atualiza boletins
+    for aluno in alunos:
+        gerar_boletim_salvar(aluno)
+
+    # Salvar alterações no sistema (opcional, depende da sua função Cadastro)
+    Cadastro.salvar_dados(usuarios)
+    print("✅ Dados dos alunos atualizados no sistema.")
 
 def gerar_boletim(professor):
     ra = input("Digite o RA do aluno: ").strip()
