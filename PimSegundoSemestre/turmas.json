@@ -1,0 +1,22 @@
+[
+    {
+        "nome": "ADS",
+        "curso": "ads",
+        "semestre": "1",
+        "alunos": [
+            "Kaue"
+        ],
+        "professores": [
+            "Kaue"
+        ]
+    },
+    {
+        "nome": "IA",
+        "curso": "ia",
+        "semestre": "1",
+        "alunos": [
+            "Kaue"
+        ],
+        "professores": []
+    }
+]

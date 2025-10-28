@@ -36,8 +36,16 @@ def chatbot():
             else:
                 print("Chatbot: Tipo de usuário inválido. Tente novamente.")
 
-       
-
+        elif "relatorio" in pergunta or "relatório" in pergunta:
+            if "professor" in pergunta:
+                print("Chatbot: Ok! Vamos fazer o relatório do professor 👨‍🏫")
+                relatorio_professor()
+            elif "aluno" in pergunta:
+                print("Chatbot: Ok! Vamos fazer o relatório do aluno 🎓")
+                relatorio_aluno()
+            else:
+                print("Chatbot: Você quer fazer o relatório do professor ou aluno?")
+                
         elif "nota" in pergunta or "notas" in pergunta:
             print("Chatbot: As notas ficam disponíveis na área do aluno após o login.")
         elif "senha" in pergunta:
@@ -52,12 +60,5 @@ def chatbot():
             print("Chatbot: O administrador tem acesso total ao sistema, podendo cadastrar novos usuários.")
         elif "faculdade" in pergunta:
             print("Chatbot: A Faculdade é comprometida com a excelência acadêmica e inovação tecnológica! 🎓")
-
-        elif "relatorio aluno" in pergunta or "informacoes aluno" in pergunta:
-            relatorio_aluno()
-
-        elif "relatorio professor" in pergunta or "informacoes professor" in pergunta:
-            relatorio_professor()
-
         else:
             print("Chatbot: Desculpe, não entendi. Pode reformular a pergunta? 🤔")

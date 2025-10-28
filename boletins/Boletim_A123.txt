@@ -1,0 +1,16 @@
+=== Boletim de Alan (RA: A123) ===
+
+📘 Notas:
+ - ciencias: 9.0
+
+🧮 Média geral: 9.00
+
+📅 Frequência:
+ - Total de aulas: 7
+ - Presenças: 6
+ - Faltas: 1
+ - Percentual de presença: 85.71%
+
+📊 Situação final: ✅ Aprovado
+
+--- Fim do Boletim ---

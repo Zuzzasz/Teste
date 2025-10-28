@@ -62,18 +62,20 @@ def menu_cadastro():
 
 def cadastrar_aluno():
     dados = carregar_dados()
-    if any(u for u in dados if u.get("ra") == ra):
-        print("❌ RA já cadastrado!")
-        return
-    if any(u for u in dados if u.get("email","").lower() == email.lower()):
-        print("❌ E-mail já cadastrado!")
-        return
-    
+
     print("\n=== Cadastro de Aluno ===")
-    nome = input("Nome do aluno: ")
+    nome = input("Nome do aluno: ").strip()
     ra = input("RA do aluno: ").strip().upper()
     email = input("E-mail do aluno: ").strip().lower()
     idade = int(input("Idade: "))
+
+    # Verifica se RA ou e-mail já existem
+    if any(u for u in dados if u.get("ra") == ra):
+        print("❌ RA já cadastrado!")
+        return
+    if any(u for u in dados if u.get("email", "").lower() == email):
+        print("❌ E-mail já cadastrado!")
+        return
 
     senha = pedir_senha_segura()
     senha_hash = bcrypt.hashpw(senha.encode('utf-8'), bcrypt.gensalt())
@@ -87,24 +89,30 @@ def cadastrar_aluno():
         "email": email,
         "senha": senha_hash.decode('utf-8'),
         "acessos": [agora],
-        "tempo_total_minutos": 0
+        "tempo_total_minutos": 0,
+        "notas": {},
+        "presencas": 0,
+        "total_aulas": 0
     }
 
-    dados = carregar_dados()
+    # Salva o aluno no sistema
     dados.append(aluno)
     salvar_dados(dados)
     print("✅ Aluno cadastrado com sucesso!\n")
 
 def cadastrar_professor():
-    if any(u for u in dados if u.get("email","").lower() == email.lower()):
-        print("❌ E-mail já cadastrado!")
-        return
-    
+    dados = carregar_dados()  # <- colocar aqui no começo
+
     print("\n=== Cadastro de Professor ===")
     nome = input("Nome do professor: ")
     email = input("E-mail institucional: ").strip().lower()
     disciplina = input("Disciplina que leciona: ")
     idade = int(input("Idade: "))
+
+    # Verifica se e-mail já existe
+    if any(u for u in dados if u.get("email","").lower() == email.lower()):
+        print("❌ E-mail já cadastrado!")
+        return
 
     senha = pedir_senha_segura()
     senha_hash = bcrypt.hashpw(senha.encode('utf-8'), bcrypt.gensalt())
@@ -121,10 +129,10 @@ def cadastrar_professor():
         "tempo_total_minutos": 0
     }
 
-    dados = carregar_dados()
     dados.append(professor)
     salvar_dados(dados)
     print("✅ Professor cadastrado com sucesso!\n")
+
 
 def cadastrar_usuario(tipo):
     if tipo == "aluno":

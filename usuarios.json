@@ -4,29 +4,48 @@
         "nome": "Kaue",
         "ra": "K123",
         "idade": 19,
-        "email": "Kazu@",
-        "senha": "$2b$12$Edc9oOwUAc/svn6IXdpWtuH82Cze7V5xlltTuWaj9Vw3EZ9gQY5Cq",
+        "email": "kazu@",
+        "senha": "$2b$12$maJgmIuFI/o8PAd3zcXu2u6Rr35QcMnPZLBcUXVS3Q.7/WsBhkHWm",
         "acessos": [
-            "2025-10-27T17:10:05.681155"
+            "2025-10-28T14:41:55.433326"
         ],
         "tempo_total_minutos": 0,
         "notas": {
-            "matematica": 9.0,
-            "portugues": 7.0,
-            "Ciências": 5.0
+            "matematica": 8.0,
+            "portugues": 9.0
         },
-        "faltas": 1
+        "faltas": 2,
+        "presencas": 9,
+        "total_aulas": 11
     },
     {
         "tipo": "professor",
         "nome": "Kaue",
         "idade": 19,
-        "email": "Kazu@",
+        "email": "kazu@@",
         "disciplina": "matematica",
-        "senha": "$2b$12$7sTmLBtFERfchiM3zGPsQuYJmUh/mCJPtCEXNCgDeJWqdssUK9koa",
+        "senha": "$2b$12$BFZXbk1eDCRUJWso9UjgYu7D7YN9k/CGJJUOe6764yHPds4.ToWna",
         "acessos": [
-            "2025-10-27T17:10:31.198419"
+            "2025-10-28T14:42:16.361675"
         ],
         "tempo_total_minutos": 0
+    },
+    {
+        "tipo": "aluno",
+        "nome": "Alan",
+        "ra": "A123",
+        "idade": 17,
+        "email": "alan@",
+        "senha": "$2b$12$Uw/kEdSfAE7buFlhFFf9uexgeulh/V0hliblEALp6oMJp2zygZVR.",
+        "acessos": [
+            "2025-10-28T15:57:10.112420"
+        ],
+        "tempo_total_minutos": 0,
+        "notas": {
+            "ciencias": 9.0
+        },
+        "presencas": 6,
+        "total_aulas": 7,
+        "faltas": 1
     }
 ]

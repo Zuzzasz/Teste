@@ -1,4 +1,4 @@
-# main.py
+6# main.py
 import AreaDoAluno
 import AreaDoProfessor
 import Cadastro

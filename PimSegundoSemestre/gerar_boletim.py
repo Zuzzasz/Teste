@@ -1,21 +1,6 @@
 import os
 
-import os
-
-def gerar_boletim_salvar(aluno):
-    """
-    Gera o boletim de um aluno e salva em arquivo .txt na pasta 'boletins'.
-    Mostra todas as informações no console.
-
-    Args:
-        aluno (dict): Deve conter:
-            - 'nome': str
-            - 'ra': str
-            - 'notas': dict {materia: nota}
-            - 'faltas': int (quantidade de faltas)
-            - 'total_aulas': int (opcional, padrão 100)
-    """
-
+def gerar_boletim_salvar(aluno, imprimir=True):
     # Criar pasta 'boletins' se não existir
     pasta_boletins = "boletins"
     os.makedirs(pasta_boletins, exist_ok=True)
@@ -25,54 +10,48 @@ def gerar_boletim_salvar(aluno):
     nome = aluno.get('nome', 'Aluno desconhecido')
     notas = aluno.get('notas', {})
     faltas = aluno.get('faltas', 0)
-    total_aulas = aluno.get('total_aulas', 100)
+    total_aulas = aluno.get('total_aulas', 0)
 
-    # Calcula presença começando em 100% e diminuindo com faltas
-    percentual_frequencia = 100 - (faltas / total_aulas) * 100
-    aulas_presentes = total_aulas - faltas
+    # Calcula frequência
+    aulas_presentes = aluno.get('presencas', 0)
+    percentual_frequencia = (aulas_presentes / total_aulas * 100) if total_aulas > 0 else 0
 
-    # --- Construção do boletim ---
-    linhas = [
-        f"=== Boletim de {nome} (RA: {ra}) ===\n",
-    ]
+    # Construção do boletim
+    linhas = [f"=== Boletim de {nome} (RA: {ra}) ===\n"]
 
     # Notas
     if notas:
         linhas.append("📘 Notas:")
         for materia, nota in notas.items():
-            linhas.append(f"{materia}: {nota}")
-        media = sum(notas.values()) / len(notas) if notas else 0
-        linhas.append(f"\nMédia geral: {media:.2f}\n")
+            linhas.append(f" - {materia}: {nota}")
+        media = sum(notas.values()) / len(notas)
+        linhas.append(f"\n🧮 Média geral: {media:.2f}\n")
     else:
+        media = 0
         linhas.append("📘 Boletim: Nenhuma nota registrada.\n")
 
     # Frequência
-    linhas.append(f"📅 Frequência: {percentual_frequencia:.2f}% ({aulas_presentes}/{total_aulas} aulas presentes)")
+    linhas.append("📅 Frequência:")
+    linhas.append(f" - Total de aulas: {total_aulas}")
+    linhas.append(f" - Presenças: {aulas_presentes}")
+    linhas.append(f" - Faltas: {faltas}")
+    linhas.append(f" - Percentual de presença: {percentual_frequencia:.2f}%")
 
+    # Situação final
+    if media >= 6 and percentual_frequencia >= 75:
+        situacao = "✅ Aprovado"
+    elif percentual_frequencia < 75:
+        situacao = "⚠️ Reprovado por falta"
+    else:
+        situacao = "❌ Reprovado por nota"
+    linhas.append(f"\n📊 Situação final: {situacao}")
     linhas.append("\n--- Fim do Boletim ---\n")
 
-    # --- Salvar em arquivo ---
+    # Salva o boletim no arquivo
     nome_arquivo = os.path.join(pasta_boletins, f"Boletim_{ra}.txt")
-    try:
-        with open(nome_arquivo, "w", encoding="utf-8") as f:
-            f.write("\n".join(linhas))
-        print(f"\n✅ Boletim gerado e salvo em '{nome_arquivo}'")
-    except Exception as e:
-        print(f"❌ Erro ao salvar o boletim: {e}")
+    with open(nome_arquivo, "w", encoding="utf-8") as f:
+        f.write("\n".join(linhas))
 
-    # --- Exibir no console ---
-    print("\n".join(linhas))
-
-
-# ==========================
-# Exemplo de uso
-# ==========================
-if __name__ == "__main__":
-    aluno_exemplo = {
-        "nome": "Kaue Zuza",
-        "ra": "123456",
-        "notas": {"Algoritmos": 8, "Estatística": 9, "Engenharia de Software": 8.5},
-        "faltas": 8,
-        "total_aulas": 100
-    }
-    gerar_boletim_salvar(aluno_exemplo)
+    # Se solicitado, imprime no console
+    if imprimir:
+        print("\n".join(linhas))

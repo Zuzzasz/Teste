@@ -2,6 +2,8 @@
 from Cadastro import carregar_dados, salvar_dados
 from Cadastro import carregar_dados
 import gerar_boletim
+from gerar_boletim import gerar_boletim_salvar
+import Cadastro
 
 def menu_professor(professor):
     while True:
@@ -59,16 +61,12 @@ def lancar_notas():
     salvar_dados(dados)
 
 
-import Cadastro
-from gerar_boletim import gerar_boletim_salvar
+from Cadastro import carregar_dados, salvar_dados
+from gerar_boletim import gerar_boletim_salvar  # importação direta da função
 
 def realizar_chamada():
-    """
-    Busca alunos cadastrados no sistema e registra presença/falta.
-    Gera boletim atualizado para cada aluno.
-    """
     # Carrega todos os usuários
-    usuarios = Cadastro.carregar_dados()
+    usuarios = carregar_dados()
 
     # Filtra apenas alunos
     alunos = [u for u in usuarios if u.get('tipo') == 'aluno']
@@ -83,7 +81,7 @@ def realizar_chamada():
         while True:
             resposta = input(f"O aluno {aluno['nome']} (RA: {aluno['ra']}) esteve presente? (s/n): ").strip().lower()
             if resposta in ['s', 'sim']:
-                aluno['faltas'] = aluno.get('faltas', 0)  # garante que a chave exista
+                aluno['presencas'] = aluno.get('presencas', 0) + 1
                 print(f"✅ Presença registrada para {aluno['nome']}")
                 break
             elif resposta in ['n', 'não', 'nao']:
@@ -93,15 +91,15 @@ def realizar_chamada():
             else:
                 print("Resposta inválida! Digite 's' para presente ou 'n' para falta.")
 
-    print("\n✅ Chamada finalizada para todos os alunos.\n")
+        # Atualiza o total de aulas
+        aluno['total_aulas'] = aluno.get('presencas', 0) + aluno.get('faltas', 0)
 
-    # Atualiza boletins
-    for aluno in alunos:
-        gerar_boletim_salvar(aluno)
+        # Atualiza o boletim, mas **não imprime**
+        gerar_boletim_salvar(aluno, imprimir=False)
 
-    # Salvar alterações no sistema (opcional, depende da sua função Cadastro)
-    Cadastro.salvar_dados(usuarios)
-    print("✅ Dados dos alunos atualizados no sistema.")
+    # Salvar alterações no sistema
+    salvar_dados(usuarios)
+    print("\n✅ Chamada finalizada e dados dos alunos atualizados.\n")
 
 def gerar_boletim(professor):
     ra = input("Digite o RA do aluno: ").strip()
