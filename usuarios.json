@@ -11,12 +11,12 @@
         ],
         "tempo_total_minutos": 0,
         "notas": {
-            "matematica": 8.0,
+            "matematica": 7.0,
             "portugues": 9.0
         },
-        "faltas": 2,
-        "presencas": 9,
-        "total_aulas": 11
+        "faltas": 3,
+        "presencas": 10,
+        "total_aulas": 13
     },
     {
         "tipo": "professor",
@@ -42,10 +42,23 @@
         ],
         "tempo_total_minutos": 0,
         "notas": {
-            "ciencias": 9.0
+            "ciencias": 9.0,
+            "matematica": 9.0
         },
-        "presencas": 6,
-        "total_aulas": 7,
+        "presencas": 8,
+        "total_aulas": 9,
         "faltas": 1
+    },
+    {
+        "tipo": "professor",
+        "nome": "Kaue",
+        "idade": 19,
+        "email": "",
+        "disciplina": "matematica",
+        "senha": "$2b$12$oPe/vQJZXJ4S6LrQUpp8but7SnVOICFc9o8wl8JfG8rqFunWVLNZe",
+        "acessos": [
+            "2025-11-10T20:50:00.001773"
+        ],
+        "tempo_total_minutos": 0
     }
 ]

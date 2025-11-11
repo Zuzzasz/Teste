@@ -1,16 +1,16 @@
 === Boletim de Kaue (RA: K123) ===
 
 📘 Notas:
- - matematica: 8.0
+ - matematica: 7.0
  - portugues: 9.0
 
-🧮 Média geral: 8.50
+🧮 Média geral: 8.00
 
 📅 Frequência:
- - Total de aulas: 11
- - Presenças: 9
- - Faltas: 2
- - Percentual de presença: 81.82%
+ - Total de aulas: 13
+ - Presenças: 10
+ - Faltas: 3
+ - Percentual de presença: 76.92%
 
 📊 Situação final: ✅ Aprovado
 

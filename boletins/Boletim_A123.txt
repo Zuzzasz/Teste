@@ -2,14 +2,15 @@
 
 📘 Notas:
  - ciencias: 9.0
+ - matematica: 9.0
 
 🧮 Média geral: 9.00
 
 📅 Frequência:
- - Total de aulas: 7
- - Presenças: 6
+ - Total de aulas: 9
+ - Presenças: 8
  - Faltas: 1
- - Percentual de presença: 85.71%
+ - Percentual de presença: 88.89%
 
 📊 Situação final: ✅ Aprovado
 
